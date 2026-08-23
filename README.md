@@ -1,10 +1,10 @@
-# cursor_test
+#IT-OBITI
 
-Репозиторий для артефактов Cursor / ЭНКО.
+Репозиторий для артефактов ИТ ЭНКО.
 
 ## ОБИТИ на GitHub Pages
 
-Сайт: **https://anufrievpg.github.io/cursor_test/**
+Сайт: **https://enco-it.github.io/IT-OBITI/**
 
 Сейчас в настройках: **Deploy from a branch** → `main` → `/docs`.
 
