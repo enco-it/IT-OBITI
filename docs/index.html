@@ -28,6 +28,7 @@
       --eng: #5B6B8C;
       --data: #B35C1E;
       --lead: #1B4987;
+      --infra: #0E7C7B;
       --shadow: 0 10px 30px rgba(18, 42, 75, 0.08);
       --shadow-lg: 0 18px 50px rgba(18, 42, 75, 0.12);
     }
@@ -280,7 +281,7 @@
     }
     .org-canvas {
       position: relative;
-      min-width: 1080px;
+      min-width: 1480px;
       min-height: 1030px;
       padding: 1rem;
     }
@@ -317,8 +318,16 @@
     .org-node.eng .role { color: var(--eng); }
     .org-node.data { border-top: 4px solid var(--data); }
     .org-node.data .role { color: var(--data); }
+    .org-node.infra { border-top: 4px solid var(--infra); }
+    .org-node.infra .role { color: var(--infra); }
+    .org-node.lead.infra-lead { border-top-color: var(--infra); }
+    .org-node.lead.infra-lead .role { color: var(--infra); }
     .org-node.vacancy { border-style: dashed; opacity: .92; }
     .org-node.vacancy .name { color: var(--data); }
+    .org-divider {
+      position: absolute; left: 700px; top: 8px; bottom: 8px; width: 1px;
+      background: linear-gradient(180deg, transparent, var(--line) 8%, var(--line) 92%, transparent);
+    }
 
     .block-label {
       position: absolute;
@@ -379,6 +388,7 @@
     .pill.product { background: rgba(31,138,112,.12); color: var(--product); }
     .pill.eng { background: rgba(91,107,140,.14); color: var(--eng); }
     .pill.data { background: rgba(179,92,30,.12); color: var(--data); }
+    .pill.infra { background: rgba(14,124,123,.12); color: var(--infra); }
 
     .table-wrap {
       overflow: auto;
@@ -611,7 +621,7 @@
       .table-wrap { max-height: none !important; overflow: visible !important; }
       .org-canvas-wrap { overflow: visible !important; }
       .org-canvas {
-        min-width: 1080px !important;
+        min-width: 1480px !important;
         min-height: 1030px !important;
         height: auto !important;
       }
@@ -763,7 +773,11 @@
         </button>
         <button class="nav-btn" data-panel="org">
           <span class="nav-num">06</span>
-          <span><div class="nav-label">Оргструктура</div><div class="nav-sub">15 ед. · 10 чел. + 5 вакансий</div></span>
+          <span><div class="nav-label">Оргструктура</div><div class="nav-sub">24 ед. · ОБИТИ + инфраструктура</div></span>
+        </button>
+        <button class="nav-btn" data-panel="infra">
+          <span class="nav-num">06+</span>
+          <span><div class="nav-label">Инфраструктура</div><div class="nav-sub">ESD · ИБ · L1/L2</div></span>
         </button>
         <button class="nav-btn" data-panel="value">
           <span class="nav-num">07</span>
@@ -791,7 +805,7 @@
         </button>
         <button class="nav-btn" data-panel="vacancies">
           <span class="nav-num">13</span>
-          <span><div class="nav-label">Вакансии</div><div class="nav-sub">Почему · кто · зачем · польза</div></span>
+          <span><div class="nav-label">Вакансии</div><div class="nav-sub">8 позиций · ОБИТИ + инфраструктура</div></span>
         </button>
         <button class="nav-btn" data-panel="ecosystem">
           <span class="nav-num">14</span>
@@ -843,9 +857,9 @@
           </div>
 
           <div class="grid-4" style="margin-top:1.15rem">
-            <article class="tile"><div class="label">Состав</div><h3>15 ед.</h3><p>10 человек + 5 вакансий · 3 блока</p></article>
-            <article class="tile"><div class="label">Вакансии</div><h3>5 позиций</h3><p>РП MacroCRM · Админ данных · DQ · DE · Консультант</p></article>
-            <article class="tile"><div class="label">Процессы</div><h3>16 RACI</h3><p>Цели + инициативы УСЦ / AI</p></article>
+            <article class="tile"><div class="label">Состав</div><h3>24 ед.</h3><p>16 человек + 8 вакансий · 2 отдела</p></article>
+            <article class="tile"><div class="label">Вакансии</div><h3>8 позиций</h3><p>5 в ОБИТИ · 3 в инфраструктуре</p></article>
+            <article class="tile"><div class="label">Процессы</div><h3>RACI</h3><p>ОБИТИ + ESD + ИБ + L1/L2</p></article>
             <article class="tile"><div class="label">Инструменты</div><h3>PPM · 1С · Битрикс24</h3><p>MacroCRM · BI/DWH · AI</p></article>
           </div>
         </section>
@@ -922,7 +936,7 @@
             <article class="tile">
               <div class="label">Оргструктура</div>
               <h3>Встроенность без конфликтов</h3>
-              <p>Чёткая вписанность рядом с ИТ-департаментом и службой качества — без статусных столкновений.</p>
+              <p>Чёткая вписанность рядом с Отделом инфраструктуры и сервисов (Четыркин) — без статусных столкновений и без подчинения инфраструктурного контура ОБИТИ.</p>
             </article>
             <article class="tile">
               <div class="label">Рост</div>
@@ -1027,7 +1041,7 @@
             <article class="tile">
               <div class="label">Интеграция</div>
               <h3>Поддержка / Саппорт L3</h3>
-              <p>Не входящие заявки, а управление жизненным циклом продуктов: мониторинг, проактивные сбои, экспертиза. L1/L2 — на аутсорсе или ИТ.</p>
+              <p>Не входящие заявки, а управление жизненным циклом продуктов: мониторинг, проактивные сбои, экспертиза. L1/L2 — Отдел инфраструктуры и сервисов (Четыркин).</p>
             </article>
             <article class="tile">
               <div class="label">Инновации + интеграция</div>
@@ -1061,112 +1075,174 @@
         <section class="panel" id="panel-org">
           <div class="section-head">
             <div>
-              <h2>Оргструктура · 15 штатных единиц</h2>
-              <p>10 человек + 5 вакансий. Кликните по карточке, чтобы открыть профиль.</p>
+              <h2>Оргструктура · 24 штатные единицы</h2>
+              <p>ОБИТИ 15 ед. (10 чел. + 5 вакансий) и Отдел инфраструктуры 9 ед. (6 чел. + 3 вакансии). Кликните по карточке.</p>
             </div>
             <div style="display:flex;gap:.4rem;flex-wrap:wrap">
               <span class="pill process">Процессы + AI</span>
               <span class="pill eng">Инженерия</span>
               <span class="pill data">Отдел данных</span>
+              <span class="pill infra">Инфраструктура</span>
             </div>
+          </div>
+
+          <div class="notice">
+            <strong>Два самостоятельных отдела.</strong> Нигматуллина руководит ОБИТИ (цифровизация ДОФ). Четыркин руководит Отделом инфраструктуры и сервисов и <em>не</em> входит в её подчинение. Связь — через RACI: архитектура и L3 у ОБИТИ, доступность, сети, ИБ и L1/L2 у инфраструктуры.
           </div>
 
           <div class="org-canvas-wrap">
             <div class="org-canvas" id="orgCanvas">
-              <svg class="org-svg" viewBox="0 0 1080 1010" preserveAspectRatio="xMidYMin meet">
+              <svg class="org-svg" viewBox="0 0 1480 1030" preserveAspectRatio="xMidYMin meet">
                 <defs>
                   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#A8B7C7"/>
                   </marker>
                 </defs>
-                <path d="M540 95 V140" stroke="#A8B7C7" stroke-width="2" fill="none"/>
-                <path d="M180 140 H900" stroke="#A8B7C7" stroke-width="2" fill="none"/>
-                <path d="M180 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
-                <path d="M540 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
-                <path d="M900 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M335 105 V140" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M115 140 H555" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M115 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M335 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M555 140 V175" stroke="#A8B7C7" stroke-width="2" fill="none"/>
+                <path d="M1065 105 V140" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M825 140 H1305" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M825 140 V175" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M1065 140 V175" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M1305 140 V175" stroke="#0E7C7B" stroke-width="2" fill="none"/>
               </svg>
+              <div class="org-divider"></div>
 
-              <div class="org-node lead active" data-person="nigmatullina" style="left:420px;top:10px;width:240px;animation-delay:.05s">
+              <div class="org-node lead active" data-person="nigmatullina" style="left:215px;top:10px;width:240px;animation-delay:.05s">
                 <div class="role">Руководитель ОБИТИ</div>
                 <div class="name">Нигматуллина Эльвира</div>
                 <div class="grade">Зам. директора ДОФ по цифровизации</div>
               </div>
+              <div class="org-node lead infra-lead" data-person="chetyrkin" style="left:945px;top:10px;width:240px;animation-delay:.06s">
+                <div class="role">Начальник отдела инфраструктуры</div>
+                <div class="name">Иван Четыркин</div>
+                <div class="grade">Вне подчинения Нигматуллиной</div>
+              </div>
 
-              <div class="block-label" style="left:20px;top:160px;color:var(--process);max-width:250px;line-height:1.25">Процессная аналитика и AI-трансформация</div>
-              <div class="block-label" style="left:400px;top:160px;color:var(--eng)">Блок инженерии</div>
-              <div class="block-label" style="left:780px;top:160px;color:var(--data)">Отдел данных</div>
+              <div class="block-label" style="left:10px;top:158px;color:var(--process);max-width:210px;line-height:1.25">Процессы + AI</div>
+              <div class="block-label" style="left:230px;top:158px;color:var(--eng)">Инженерия</div>
+              <div class="block-label" style="left:450px;top:158px;color:var(--data)">Отдел данных</div>
+              <div class="block-label" style="left:720px;top:158px;color:var(--infra)">Развёртывание</div>
+              <div class="block-label" style="left:960px;top:158px;color:var(--infra)">Сисадмин + ИБ</div>
+              <div class="block-label" style="left:1200px;top:158px;color:var(--infra)">Техподдержка L1/L2</div>
 
-              <div class="org-node process" data-person="anufriev" style="left:20px;top:195px;animation-delay:.1s">
+              <div class="org-node process" data-person="anufriev" style="left:10px;top:195px;animation-delay:.1s">
                 <div class="role">Рук. процессов и AI</div>
                 <div class="name">Ануфриев Павел</div>
                 <div class="grade">Senior/Lead</div>
               </div>
-              <div class="org-node process" data-person="sergeeva" style="left:20px;top:310px;animation-delay:.14s">
+              <div class="org-node process" data-person="sergeeva" style="left:10px;top:310px;animation-delay:.14s">
                 <div class="role">Главный бизнес-аналитик</div>
                 <div class="name">Сергеева Ксения</div>
                 <div class="grade">Senior</div>
               </div>
-              <div class="org-node process" data-person="kraeva" style="left:20px;top:425px;animation-delay:.18s">
+              <div class="org-node process" data-person="kraeva" style="left:10px;top:425px;animation-delay:.18s">
                 <div class="role">БА · MacroCRM · 1С CRM</div>
                 <div class="name">Саша Краева</div>
                 <div class="grade">Middle</div>
               </div>
-              <div class="org-node process vacancy" data-person="pm_macro" style="left:20px;top:540px;animation-delay:.2s">
+              <div class="org-node process vacancy" data-person="pm_macro" style="left:10px;top:540px;animation-delay:.2s">
                 <div class="role">Руководитель проекта MacroCRM</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Middle/Senior · найм</div>
               </div>
 
-              <div class="org-node eng" data-person="vladelschikova" style="left:400px;top:195px;animation-delay:.22s">
+              <div class="org-node eng" data-person="vladelschikova" style="left:230px;top:195px;animation-delay:.22s">
                 <div class="role">Главный инженер-архитектор</div>
                 <div class="name">Владельщикова Ирина</div>
                 <div class="grade">Senior</div>
               </div>
-              <div class="org-node eng" data-person="galyuk" style="left:400px;top:310px;animation-delay:.25s">
+              <div class="org-node eng" data-person="galyuk" style="left:230px;top:310px;animation-delay:.25s">
                 <div class="role">Ведущий инженер-разработчик</div>
                 <div class="name">Галюк Семён</div>
                 <div class="grade">Middle</div>
               </div>
-              <div class="org-node eng" data-person="matveev" style="left:400px;top:425px;animation-delay:.28s">
+              <div class="org-node eng" data-person="matveev" style="left:230px;top:425px;animation-delay:.28s">
                 <div class="role">Разработчик</div>
                 <div class="name">Матвеев Александр</div>
                 <div class="grade">Junior → Middle</div>
               </div>
-              <div class="org-node eng vacancy" data-person="dataadmin" style="left:400px;top:540px;animation-delay:.3s">
+              <div class="org-node eng vacancy" data-person="dataadmin" style="left:230px;top:540px;animation-delay:.3s">
                 <div class="role">Администратор данных</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Middle · найм</div>
               </div>
-              <div class="org-node eng vacancy" data-person="dqspec" style="left:400px;top:655px;animation-delay:.32s">
+              <div class="org-node eng vacancy" data-person="dqspec" style="left:230px;top:655px;animation-delay:.32s">
                 <div class="role">Data Quality Specialist</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Middle · найм</div>
               </div>
-              <div class="org-node eng vacancy" data-person="consult_do" style="left:400px;top:770px;animation-delay:.34s">
+              <div class="org-node eng vacancy" data-person="consult_do" style="left:230px;top:770px;animation-delay:.34s">
                 <div class="role">Консультант</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">L2/L3 · 1С:ДО · Диадок</div>
               </div>
 
-              <div class="org-node data" data-person="golovkova" style="left:780px;top:195px;animation-delay:.36s">
+              <div class="org-node data" data-person="golovkova" style="left:450px;top:195px;animation-delay:.36s">
                 <div class="role">Начальник отдела данных / BI</div>
                 <div class="name">Головкова Эльза</div>
                 <div class="grade">Senior</div>
               </div>
-              <div class="org-node data vacancy" data-person="dataeng" style="left:780px;top:310px;animation-delay:.36s">
+              <div class="org-node data vacancy" data-person="dataeng" style="left:450px;top:310px;animation-delay:.36s">
                 <div class="role">Data Engineer</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Middle/Senior · найм</div>
               </div>
-              <div class="org-node data" data-person="kasha" style="left:780px;top:425px;animation-delay:.38s">
+              <div class="org-node data" data-person="kasha" style="left:450px;top:425px;animation-delay:.38s">
                 <div class="role">Бизнес-аналитик</div>
                 <div class="name">Каша Мария</div>
                 <div class="grade">Middle</div>
               </div>
-              <div class="org-node data" data-person="moreva" style="left:780px;top:540px;animation-delay:.4s">
+              <div class="org-node data" data-person="moreva" style="left:450px;top:540px;animation-delay:.4s">
                 <div class="role">Главный бизнес-аналитик</div>
                 <div class="name">Морева Анастасия</div>
                 <div class="grade">Middle/Senior</div>
+              </div>
+
+              <div class="org-node infra" data-person="rodenko" style="left:720px;top:195px;animation-delay:.42s">
+                <div class="role">DevOps / CI/CD</div>
+                <div class="name">Антон Роденко</div>
+                <div class="grade">Без расширения штата</div>
+              </div>
+
+              <div class="org-node infra" data-person="danilov" style="left:960px;top:195px;animation-delay:.44s">
+                <div class="role">Системный администратор</div>
+                <div class="name">Данилов</div>
+                <div class="grade">Серверы · AD · бэкап</div>
+              </div>
+              <div class="org-node infra vacancy" data-person="ib_head" style="left:960px;top:310px;animation-delay:.46s">
+                <div class="role">Руководитель ИБ</div>
+                <div class="name">Вакансия</div>
+                <div class="grade">Senior · найм</div>
+              </div>
+              <div class="org-node infra vacancy" data-person="neteng" style="left:960px;top:425px;animation-delay:.48s">
+                <div class="role">Сетевой инженер</div>
+                <div class="name">Вакансия</div>
+                <div class="grade">Middle/Senior · найм</div>
+              </div>
+
+              <div class="org-node infra" data-person="voronin" style="left:1200px;top:195px;animation-delay:.5s">
+                <div class="role">Специалист техподдержки</div>
+                <div class="name">Воронин</div>
+                <div class="grade">L1/L2</div>
+              </div>
+              <div class="org-node infra" data-person="kolpakov" style="left:1200px;top:310px;animation-delay:.52s">
+                <div class="role">Главный специалист ИБ / L2</div>
+                <div class="name">Колпаков</div>
+                <div class="grade">L1/L2 · ИБ-практика</div>
+              </div>
+              <div class="org-node infra" data-person="seilbakh" style="left:1200px;top:425px;animation-delay:.54s">
+                <div class="role">Ведущий специалист ИТ</div>
+                <div class="name">Сейльбах</div>
+                <div class="grade">L1/L2</div>
+              </div>
+              <div class="org-node infra vacancy" data-person="support_plus" style="left:1200px;top:540px;animation-delay:.56s">
+                <div class="role">Специалист техподдержки</div>
+                <div class="name">Вакансия +1</div>
+                <div class="grade">География + пользователи УК</div>
               </div>
             </div>
           </div>
@@ -1197,6 +1273,127 @@
             <article class="person-print-card"><h3>Data Engineer — вакансия</h3><div class="meta">Инженер данных · Middle/Senior · найм · отдел данных</div><div class="cols"><div><h4>Ключевые задачи</h4><p>ETL/витрины для BI и DQ, пайплайны из 1С/CRM/ДО в ClickHouse.</p></div><div><h4>Зона ответственности</h4><p>Техническая инфраструктура DWH под С2/С3.</p></div><div><h4>Hard skills</h4><p>ETL, ClickHouse, PostgreSQL, Kafka, MinIO, SQL, Python.</p></div><div><h4>Soft skills</h4><p>Большие объёмы данных, оптимизация.</p></div></div></article>
             <article class="person-print-card"><h3>Каша Мария</h3><div class="meta">Бизнес-аналитик · Middle</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Метрики качества, дашборды DQ, бизнес-требования к данным и AI.</p></div><div><h4>Зона ответственности</h4><p>Бизнес-требования к данным и качеству для отчётности.</p></div><div><h4>Hard skills</h4><p>Power BI, Superset, ClickHouse, PPM.</p></div><div><h4>Soft skills</h4><p>Мультизадачность, коммуникабельность.</p></div></div></article>
             <article class="person-print-card"><h3>Морева Анастасия</h3><div class="meta">Главный бизнес-аналитик · Middle/Senior</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Описание передачи справочников между системами, API-контракты.</p></div><div><h4>Зона ответственности</h4><p>Бизнес-аналитика MDM-потоков данных.</p></div><div><h4>Hard skills</h4><p>Datareon, Kafka, ClickHouse, SQL, API.</p></div><div><h4>Soft skills</h4><p>Системное мышление, внимание к деталям.</p></div></div></article>
+            <p class="print-people-title">Отдел инфраструктуры и сервисов</p>
+            <article class="person-print-card"><h3>Иван Четыркин</h3><div class="meta">Начальник отдела инфраструктуры и сервисов · вне подчинения Нигматуллиной</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Архитектура ИТ-инфраструктуры, доступность сервисов, HelpDesk/SLA, сети и серверы, контроль техподдержки.</p></div><div><h4>Зона ответственности</h4><p>Самостоятельный отдел: CI/CD, сисадмин, ИБ, L1/L2. Согласование с ОБИТИ по архитектуре и L3.</p></div><div><h4>Hard skills</h4><p>Windows/Linux, AD, сети L2/L3, Zabbix, ServiceDesk, ITIL, резервирование.</p></div><div><h4>Soft skills</h4><p>Управление командой, приоритизация инцидентов, коммуникация с бизнесом.</p></div></div></article>
+            <article class="person-print-card"><h3>Антон Роденко</h3><div class="meta">Инженер DevOps · группа развёртывания · без расширения штата</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Kubernetes/Docker, CI/CD, отказоустойчивость контейнеров, СУБД, L2/L3 по платформе.</p></div><div><h4>Зона ответственности</h4><p>Программно-аппаратная инфраструктура приложений. Расширение не требуется: собственная разработка закрывается.</p></div><div><h4>Hard skills</h4><p>Docker, k8s, Helm, CI/CD, Linux, Zabbix/Prometheus, Helpdesk.</p></div><div><h4>Soft skills</h4><p>Автоматизация, диагностика сбоев, обучение команд CI/CD.</p></div></div></article>
+            <article class="person-print-card"><h3>Данилов</h3><div class="meta">Системный администратор</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Серверы, AD/GPO, сети базово, резервное копирование, отказоустойчивость, заявки по инфраструктуре.</p></div><div><h4>Зона ответственности</h4><p>Доступность серверной инфраструктуры и домена; эскалация на сети и ИБ.</p></div><div><h4>Hard skills</h4><p>Windows/Linux, роли WS, Zabbix, бэкап, 1С на уровне администрирования.</p></div><div><h4>Soft skills</h4><p>Дисциплина SLA, документирование, взаимодействие с L1/L2.</p></div></div></article>
+            <article class="person-print-card"><h3>Руководитель ИБ — вакансия</h3><div class="meta">Руководитель по информационной безопасности · Senior · найм</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Стратегия ИБ, 152-ФЗ, политики, DLP/SIEM, инциденты, аудит, обучение сотрудников, периметр Инстеп.</p></div><div><h4>Зона ответственности</h4><p>Институт ИБ в отделе системного администрирования. Согласование RBAC приложений с ОБИТИ.</p></div><div><h4>Hard skills</h4><p>152-ФЗ, ФСТЭК, ISO 27001, NGFW/WAF/DLP/SIEM, ПДн.</p></div><div><h4>Soft skills</h4><p>Убеждение бизнеса, управление рисками, лидерство.</p></div></div></article>
+            <article class="person-print-card"><h3>Сетевой инженер — вакансия</h3><div class="meta">Сетевой инженер · Middle/Senior · найм</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Маршрутизация, VLAN, VPN, межсетевые экраны, каналы, Wi‑Fi, сегментация периметра Инстеп и УК.</p></div><div><h4>Зона ответственности</h4><p>Сетевой контур холдинга; снятие сетевой нагрузки с сисадмина.</p></div><div><h4>Hard skills</h4><p>Cisco/Huawei/Eltex, OSPF, ACL, VPN, Wi‑Fi, мониторинг сети.</p></div><div><h4>Soft skills</h4><p>Проектирование, аварийное реагирование, документация.</p></div></div></article>
+            <article class="person-print-card"><h3>Воронин</h3><div class="meta">Специалист технической поддержки · L1/L2</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Установка и ремонт рабочих мест, заявки HelpDesk, консультации пользователей, выезды.</p></div><div><h4>Зона ответственности</h4><p>Первая линия: оборудование, ПО, эскалация на сисадмин / DevOps / ОБИТИ L3.</p></div><div><h4>Hard skills</h4><p>Windows, рабочие места, ServiceDesk, базовые сети и 1С.</p></div><div><h4>Soft skills</h4><p>Коммуникация с пользователями, соблюдение SLA.</p></div></div></article>
+            <article class="person-print-card"><h3>Колпаков</h3><div class="meta">Главный специалист по ИБ в контуре поддержки · L1/L2</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Заявки по безопасности рабочих мест, СЗИ, резервное копирование, эскалация руководителю ИБ.</p></div><div><h4>Зона ответственности</h4><p>Операционная ИБ на L1/L2 до найма руководителя ИБ; затем исполнение политик.</p></div><div><h4>Hard skills</h4><p>152-ФЗ на уровне исполнения, СЗИ, бэкап, HelpDesk.</p></div><div><h4>Soft skills</h4><p>Дисциплина доступа, аккуратность с ПДн.</p></div></div></article>
+            <article class="person-print-card"><h3>Сейльбах</h3><div class="meta">Ведущий специалист по информационным технологиям · L1/L2</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Обслуживание серверов и рабочих мест, заявки, обучение коллег L1, документация.</p></div><div><h4>Зона ответственности</h4><p>Усиленная L2-линия техподдержки, эскалация на Данилова и Роденко.</p></div><div><h4>Hard skills</h4><p>Windows/Linux, AD, ServiceDesk, базовые сети.</p></div><div><h4>Soft skills</h4><p>Наставничество младших, приоритизация заявок.</p></div></div></article>
+            <article class="person-print-card"><h3>Специалист техподдержки — вакансия +1</h3><div class="meta">L1/L2 · найм · география + пользователи УК МКД</div><div class="cols"><div><h4>Ключевые задачи</h4><p>Заявки удалённых площадок и УК, учётные записи пользователей УК, SLA на расширенном периметре.</p></div><div><h4>Зона ответственности</h4><p>Не снижать SLA при росте географии и подключении управляющих компаний.</p></div><div><h4>Hard skills</h4><p>HelpDesk, AD-учётные записи, удалённая поддержка, Windows.</p></div><div><h4>Soft skills</h4><p>Работа с распределёнными пользователями, спокойный сервис.</p></div></div></article>
+          </div>
+        </section>
+
+        <!-- 06c INFRASTRUCTURE -->
+        <section class="panel" id="panel-infra">
+          <div class="section-head">
+            <div>
+              <h2>Отдел инфраструктуры и сервисов</h2>
+              <p>Самостоятельный отдел рядом с ОБИТИ. Начальник — Иван Четыркин, вне подчинения Нигматуллиной. Цели — из контуров ESD (06) и Information Security (08).</p>
+            </div>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+              <span class="pill infra">9 ед. · 6 чел. + 3 вакансии</span>
+            </div>
+          </div>
+
+          <div class="notice">
+            <strong>Граница с ОБИТИ.</strong> Инфраструктура закрывает доступность, сети, ИБ, HelpDesk L1/L2 и рабочее место. ОБИТИ закрывает продукты, данные, интеграции и L3. Совместно: RBAC/ФЗ-152 и эскалация инцидентов.
+          </div>
+
+          <article class="tile" style="margin-bottom:1.15rem">
+            <div class="label">Общие положения</div>
+            <h3>Зачем отдел существует</h3>
+            <p>Бесперебойная ИТ-инфраструктура, информационная безопасность и техническая поддержка на всех объектах холдинга, включая расширяющуюся географию и пользователей УК МКД.</p>
+          </article>
+
+          <div class="section-head">
+            <div><h2>Положения о блоках</h2></div>
+          </div>
+          <div class="grid-3">
+            <article class="tile">
+              <div class="label">Группа развёртывания</div>
+              <h3>Антон Роденко · DevOps</h3>
+              <div class="zone-fn"><span class="n">1</span><span>CI/CD, Docker/Kubernetes, образы и пайплайны</span></div>
+              <div class="zone-fn"><span class="n">2</span><span>Отказоустойчивость контейнеров и СУБД</span></div>
+              <div class="zone-fn"><span class="n">3</span><span>Мониторинг платформы, L2/L3 по приложениям</span></div>
+              <p style="margin-top:.65rem;font-size:.84rem;color:#405061">Расширение штата не требуется: собственная разработка закрывается, остаётся сопровождение контура.</p>
+            </article>
+            <article class="tile">
+              <div class="label">Системное администрирование</div>
+              <h3>Данилов · Рук. ИБ · сети</h3>
+              <div class="zone-fn"><span class="n">1</span><span>Данилов — серверы, AD, бэкап, виртуальные среды</span></div>
+              <div class="zone-fn"><span class="n">2</span><span>Руководитель ИБ (вакансия) — политики, 152-ФЗ, DLP/SIEM, аудит</span></div>
+              <div class="zone-fn"><span class="n">3</span><span>Сетевой инженер (вакансия) — VLAN, VPN, МСЭ, каналы, Wi‑Fi</span></div>
+              <p style="margin-top:.65rem;font-size:.84rem;color:#405061">Две новые ставки снимают с Данилова сети и институт ИБ, который сейчас не закрыт как функция руководителя.</p>
+            </article>
+            <article class="tile">
+              <div class="label">Техподдержка L1/L2</div>
+              <h3>Воронин · Колпаков · Сейльбах · +1</h3>
+              <div class="zone-fn"><span class="n">1</span><span>Приём, категоризация и решение заявок L1/L2</span></div>
+              <div class="zone-fn"><span class="n">2</span><span>Рабочие места, учётные записи, обучение порталу заявок</span></div>
+              <div class="zone-fn"><span class="n">3</span><span>Эскалация L3 в ОБИТИ (инженерия / данные)</span></div>
+              <p style="margin-top:.65rem;font-size:.84rem;color:#405061">+1 ставка: расширение географии и администрирование пользователей УК (управляющие компании МКД).</p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:1.4rem">
+            <div>
+              <h2>Цели отдела · Enterprise Service Desk</h2>
+              <p>Раздел 06 карты целей департамента.</p>
+            </div>
+          </div>
+          <div class="tile" style="padding:.4rem 1rem">
+            <div class="goal-row">
+              <strong>ESD1 · Трансформация ИТ-поддержки</strong>
+              <span><span class="pill infra">Четыркин · L1/L2</span></span>
+              <span>3 внутренние линии, 4-я внешняя, приоритизация, портал заявок, обучение пользователей</span>
+            </div>
+            <div class="goal-row">
+              <strong>ESD2 · Цифровое рабочее место</strong>
+              <span><span class="pill infra">Инфраструктура</span></span>
+              <span>Почта, календарь, мессенджер, голосовая связь, видеовстречи, портал</span>
+            </div>
+            <div class="goal-row">
+              <strong>ESD3 · Единый контур Инстеп</strong>
+              <span><span class="pill infra">Четыркин · сети · ИБ</span></span>
+              <span>ИТ-инфраструктура, коммуникации, HelpDesk и SLA, снижение OPEX смешанных сред</span>
+            </div>
+            <div class="goal-row">
+              <strong>ESD4 · Непрерывность БП</strong>
+              <span><span class="pill infra">Данилов · DevOps</span></span>
+              <span>Отказоустойчивость серверов, SLA поддержки всех объектов холдинга</span>
+            </div>
+          </div>
+
+          <div class="section-head" style="margin-top:1.4rem">
+            <div>
+              <h2>Цели отдела · Information Security</h2>
+              <p>Раздел 08 карты целей департамента.</p>
+            </div>
+          </div>
+          <div class="tile" style="padding:.4rem 1rem">
+            <div class="goal-row">
+              <strong>ИБ1 · Институт обеспечения ИБ</strong>
+              <span><span class="pill infra">Рук. ИБ (вакансия)</span></span>
+              <span>Штат, регламенты, обучение, матрица рисков, внешний аудит</span>
+            </div>
+            <div class="goal-row">
+              <strong>ИБ2 · Защита от утечек</strong>
+              <span><span class="pill infra">Рук. ИБ · Колпаков</span></span>
+              <span>Внутренние и внешние нарушители, резервное копирование, ПДн</span>
+            </div>
+            <div class="goal-row">
+              <strong>ИБ3 · Стандарты на периметр Инстеп</strong>
+              <span><span class="pill infra">Рук. ИБ · сети</span></span>
+              <span>Единые стандарты ИБ на присоединённый периметр</span>
+            </div>
+            <div class="goal-row">
+              <strong>ИБ4 · ИБ цифрового контура</strong>
+              <span><span class="pill infra">Рук. ИБ</span> · <span class="pill eng">ОБИТИ</span></span>
+              <span>RBAC записей, шифрование финансовых данных, compliance ФЗ-152 — совместно с ОБИТИ</span>
+            </div>
           </div>
         </section>
 
@@ -1330,6 +1527,16 @@
               <span><span class="pill eng">Инженерия</span> · <span class="pill data">Данные</span></span>
               <span>Контроль поступлений и управление ДЗ в контуре 1С/CRM</span>
             </div>
+            <div class="goal-row">
+              <strong>ESD · ИТ-поддержка и рабочее место</strong>
+              <span><span class="pill infra">Инфраструктура</span> Четыркин · L1/L2</span>
+              <span>Портал заявок, SLA, почта/мессенджер, единый контур Инстеп и УК</span>
+            </div>
+            <div class="goal-row">
+              <strong>ИБ · институт безопасности и ПДн</strong>
+              <span><span class="pill infra">Рук. ИБ</span> · <span class="pill eng">ОБИТИ RBAC</span></span>
+              <span>Регламенты, DLP, резерв, ФЗ-152, стандарты на периметр Инстеп</span>
+            </div>
           </div>
           <div class="section-head" style="margin-top:1.25rem">
             <div>
@@ -1356,8 +1563,8 @@
             </article>
             <article class="tile">
               <div class="label">Найм</div>
-              <h3>5 вакансий</h3>
-              <p>Почему, кто, зачем и какая польза бизнесу.</p>
+              <h3>8 вакансий</h3>
+              <p>5 в ОБИТИ и 3 в инфраструктуре: ИБ, сети, L1/L2.</p>
               <div class="hero-cta" style="margin-top:.85rem">
                 <button class="tool-btn primary" data-panel="vacancies">Открыть вакансии →</button>
               </div>
@@ -1933,17 +2140,18 @@
           <div class="section-head">
             <div>
               <h2>Вакансии · почему · кто · зачем · польза</h2>
-              <p>Финальное распределение: 5 вакансий. MDM — сквозной процесс; центр компетенций по качеству данных и L2/L3 ДО/Диадок — в блоке инженерии.</p>
+              <p>8 вакансий: 5 в ОБИТИ и 3 в Отделе инфраструктуры (руководитель ИБ, сетевой инженер, +1 L1/L2).</p>
             </div>
             <div style="display:flex;gap:.4rem;flex-wrap:wrap">
               <span class="pill process">1 в процессах</span>
               <span class="pill eng">3 в инженерии</span>
               <span class="pill data">1 в отделе данных</span>
+              <span class="pill infra">3 в инфраструктуре</span>
             </div>
           </div>
 
           <div class="notice">
-            <strong>Логика найма.</strong> Рост с 10 до 15 ед. закрывает разрыв между методологией (процессы), исполнением качества данных и поддержкой ЭДО (инженерия) и отчётностью (отдел данных). Без этих ролей инициативы С1–С3 буксуют на операционном уровне.
+            <strong>Логика найма.</strong> ОБИТИ растёт с 10 до 15 ед. под С1–С3. Инфраструктура добавляет 3 ставки: институт ИБ, выделенная сеть и L1/L2 на географию + пользователей УК. DevOps (Роденко) не расширяем — собственная разработка закрывается.
           </div>
 
           <div class="grid-2">
@@ -1986,6 +2194,30 @@
               <div class="zone-fn vacancy-fn"><span class="n">Кто</span><span>Кому помогает: Владельщикова (архитектура), Галюк/Матвеев (L3), пользователи документооборота</span></div>
               <div class="zone-fn vacancy-fn"><span class="n">Зачем</span><span>Поддержка L2/L3: 1С Документооборот и СЭД Контур.Диадок</span></div>
               <div class="zone-fn vacancy-fn"><span class="n">Польза</span><span>Быстрое закрытие инцидентов ЭДО, меньше простоя документооборота и эскалаций на архитектора</span></div>
+            </article>
+            <article class="tile">
+              <div class="label">Инфраструктура · Senior</div>
+              <h3>Руководитель ИБ</h3>
+              <div class="zone-fn vacancy-fn"><span class="n">Почему</span><span>Нет выделенного института ИБ; Колпаков закрывает операционку L1/L2, но не стратегию, 152-ФЗ и аудит</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Кто</span><span>Кому помогает: Четыркин (контур), ОБИТИ (RBAC приложений), юристы и бизнес по ПДн</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Зачем</span><span>Политики ИБ, DLP/SIEM, инциденты, обучение, внешний аудит, стандарты на Инстеп</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Польза</span><span>Снижение риска утечек и штрафов; управляемый compliance вместо точечных реакций</span></div>
+            </article>
+            <article class="tile">
+              <div class="label">Инфраструктура · Middle/Senior</div>
+              <h3>Сетевой инженер</h3>
+              <div class="zone-fn vacancy-fn"><span class="n">Почему</span><span>Сети и VPN сейчас на сисадмине; рост периметра Инстеп/УК требует выделенной роли</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Кто</span><span>Кому помогает: Данилов (серверы), Рук. ИБ (сегментация), Четыркин (архитектура)</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Зачем</span><span>VLAN, маршрутизация, VPN, МСЭ, каналы, Wi‑Fi, единый сетевой контур</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Польза</span><span>Стабильные каналы на новой географии, меньше простоев связи, база для ИБ</span></div>
+            </article>
+            <article class="tile">
+              <div class="label">Инфраструктура · L1/L2</div>
+              <h3>Специалист техподдержки +1</h3>
+              <div class="zone-fn vacancy-fn"><span class="n">Почему</span><span>Расширение географии и администрирование пользователей УК МКД не влезает в текущие 3 ставки L1/L2</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Кто</span><span>Кому помогает: Воронин / Колпаков / Сейльбах, пользователи УК и удалённых площадок</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Зачем</span><span>Заявки, учётные записи УК, выезды/удалёнка, удержание SLA</span></div>
+              <div class="zone-fn vacancy-fn"><span class="n">Польза</span><span>SLA не падает при росте периметра; меньше очереди на первую линию</span></div>
             </article>
           </div>
 
@@ -2108,7 +2340,7 @@
           <div class="section-head">
             <div>
               <h2>Матрица RACI</h2>
-              <p>Зоны ответственности блоков по сквозным процессам и инициативам. Задачи — в PPM, документация — в базе знаний PPM.</p>
+              <p>ОБИТИ и Отдел инфраструктуры — разные accountable. L1/L2 исполняет заявки; инфраструктура отвечает за доступность, сети и ИБ; ОБИТИ — за продукты, данные и L3.</p>
             </div>
           </div>
           <div class="legend">
@@ -2122,34 +2354,42 @@
               <thead>
                 <tr>
                   <th style="min-width:240px">Процесс / инициатива</th>
-                  <th>Рук-ль</th>
+                  <th>Рук-ль ОБИТИ</th>
                   <th>Процессы + AI</th>
                   <th>Инженерия</th>
                   <th>Отдел данных</th>
+                  <th>Инфраструктура</th>
                   <th>L1/L2</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>С1 MDM · методология</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С1 MDM · архитектура ESB / мастер-источник</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С1 MDM · ведение справочников / валидация</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С1 MDM · мониторинг качества (DQ)</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С1 MDM · витрины / метрики качества</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С2 Финансовая УО</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С3 DWH / BI + AI</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>С4 УСЦ + AI</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>Т1 КС-2/КС-3 · оплата / лимиты</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>Т2 Расчёт финансового результата</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>Т3 ВОР и ЛСР для тендеров</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>Т4 BI коммерции</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>О1 Сетевые графики ↔ бюджет</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>О2 Движение по счетам / ДЗ</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>О5 ОЖР / исполнительная документация</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>О6 СОД (CDE)</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>MacroCRM · delivery</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>Экосистема сервисов · CRM-бэкофис</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
-                <tr><td>1С:ДО / Диадок · L2/L3</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td></tr>
-                <tr><td>Инцидент L3</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С1 MDM · методология</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С1 MDM · архитектура ESB / мастер-источник</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С1 MDM · ведение справочников / валидация</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С1 MDM · мониторинг качества (DQ)</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С1 MDM · витрины / метрики качества</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С2 Финансовая УО</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С3 DWH / BI + AI</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>С4 УСЦ + AI</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Т1 КС-2/КС-3 · оплата / лимиты</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Т2 Расчёт финансового результата</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Т3 ВОР и ЛСР для тендеров</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Т4 BI коммерции</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>О1 Сетевые графики ↔ бюджет</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>О2 Движение по счетам / ДЗ</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>О5 ОЖР / исполнительная документация</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>О6 СОД (CDE)</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>MacroCRM · delivery</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Экосистема сервисов · CRM-бэкофис</td><td><span class="raci A">A</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>1С:ДО / Диадок · L2/L3</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td></tr>
+                <tr><td>Инцидент L3 (ОБИТИ)</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>И1 · Трансформация ИТ-поддержки (ESD)</td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci I">I</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td></tr>
+                <tr><td>И2 · Инстеп / УК в единый контур</td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td></tr>
+                <tr><td>И3 · Защита от утечек (DLP, ИБ)</td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td></tr>
+                <tr><td>И4 · ФЗ-152 / RBAC цифрового контура</td><td><span class="raci A">A</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>И5 · Отказоустойчивость и бэкап / ЦОД</td><td><span class="raci I">I</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci C">C</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>И6 · Сетевой контур (VPN, VLAN, МСЭ)</td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci I">I</span></td></tr>
+                <tr><td>Инцидент L1/L2</td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci I">I</span></td><td><span class="raci R">R</span>/<span class="raci A">A</span></td><td><span class="raci R">R</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -2174,9 +2414,17 @@
               <h3>Пилот AI в процессах</h3>
               <p>Ануфриев (бизнес-логика) → Головкова / Каша (данные) → Владельщикова (AI-API) → обучение пользователей.</p>
             </article>
+            <article class="tile">
+              <h3>Инцидент L1/L2</h3>
+              <p>Портал заявок → техподдержка (Воронин / Колпаков / Сейльбах) → при необходимости Данилов / Роденко. ОБИТИ информируется, не исполняет.</p>
+            </article>
+            <article class="tile">
+              <h3>Эскалация L3</h3>
+              <p>Инфраструктура фиксирует недоступность платформы/сети. Продукт и интеграции — инженерия ОБИТИ. Данные — отдел данных. Четыркин и Нигматуллина — A каждый в своей зоне.</p>
+            </article>
           </div>
 
-          <p class="footer-note">ЭНКО · ОБИТИ · 15 штатных единиц (10 чел. + 5 вакансий) · 3 блока</p>
+          <p class="footer-note">ЭНКО · ОБИТИ 15 ед. + Отдел инфраструктуры 9 ед. · 24 штатные единицы (16 чел. + 8 вакансий)</p>
         </section>
 
       </main>
@@ -2321,6 +2569,87 @@
         hard: "Datareon, Kafka, ClickHouse, SQL, описание API.",
         soft: "Системное мышление, внимание к деталям, коммуникация с инженерией.",
         zone: "Бизнес-аналитика MDM-потоков данных."
+      },
+      chetyrkin: {
+        name: "Иван Четыркин",
+        role: "Начальник отдела инфраструктуры и сервисов",
+        meta: "Вне подчинения Нигматуллиной · ДИТ",
+        tasks: "Архитектура ИТ-инфраструктуры, доступность сервисов, HelpDesk/SLA, сети и серверы, контроль техподдержки.",
+        hard: "Windows/Linux, AD, сети L2/L3, Zabbix, ServiceDesk, ITIL, резервирование.",
+        soft: "Управление командой, приоритизация инцидентов, коммуникация с бизнесом.",
+        zone: "Самостоятельный отдел: CI/CD, сисадмин, ИБ, L1/L2. С ОБИТИ — архитектура и эскалация L3."
+      },
+      rodenko: {
+        name: "Антон Роденко",
+        role: "Инженер DevOps / CI/CD",
+        meta: "Группа развёртывания · без расширения штата",
+        tasks: "Kubernetes/Docker, CI/CD, отказоустойчивость контейнеров, СУБД, L2/L3 по платформе.",
+        hard: "Docker, k8s, Helm, CI/CD, Linux, Zabbix/Prometheus, Helpdesk.",
+        soft: "Автоматизация, диагностика сбоев, обучение команд CI/CD.",
+        zone: "Программно-аппаратная инфраструктура приложений. Найм не требуется: собственная разработка закрывается."
+      },
+      danilov: {
+        name: "Данилов",
+        role: "Системный администратор",
+        meta: "Отдел системного администрирования",
+        tasks: "Серверы, AD/GPO, резервное копирование, отказоустойчивость, заявки по инфраструктуре.",
+        hard: "Windows/Linux, роли WS, Zabbix, бэкап, базовые сети, 1С на уровне администрирования.",
+        soft: "Дисциплина SLA, документирование, взаимодействие с L1/L2.",
+        zone: "Доступность серверной инфраструктуры и домена; эскалация на сети и ИБ."
+      },
+      ib_head: {
+        name: "Руководитель ИБ — вакансия",
+        role: "Руководитель по информационной безопасности",
+        meta: "Senior · найм · отдел системного администрирования",
+        tasks: "Стратегия ИБ, 152-ФЗ, политики, DLP/SIEM, инциденты, аудит, обучение, периметр Инстеп.",
+        hard: "152-ФЗ, ФСТЭК, ISO 27001, NGFW/WAF/DLP/SIEM, ПДн.",
+        soft: "Убеждение бизнеса, управление рисками, лидерство.",
+        zone: "Институт ИБ. RBAC приложений согласуется с ОБИТИ."
+      },
+      neteng: {
+        name: "Сетевой инженер — вакансия",
+        role: "Сетевой инженер",
+        meta: "Middle/Senior · найм",
+        tasks: "Маршрутизация, VLAN, VPN, межсетевые экраны, каналы, Wi‑Fi, сегментация периметра Инстеп и УК.",
+        hard: "Cisco/Huawei/Eltex, OSPF, ACL, VPN, Wi‑Fi, мониторинг сети.",
+        soft: "Проектирование, аварийное реагирование, документация.",
+        zone: "Сетевой контур холдинга; снятие сетевой нагрузки с сисадмина."
+      },
+      voronin: {
+        name: "Воронин",
+        role: "Специалист технической поддержки",
+        meta: "L1/L2",
+        tasks: "Установка и ремонт рабочих мест, заявки HelpDesk, консультации, выезды.",
+        hard: "Windows, рабочие места, ServiceDesk, базовые сети и 1С.",
+        soft: "Коммуникация с пользователями, соблюдение SLA.",
+        zone: "Первая линия: оборудование и ПО; эскалация на сисадмин / DevOps / ОБИТИ L3."
+      },
+      kolpakov: {
+        name: "Колпаков",
+        role: "Главный специалист по ИБ в контуре поддержки",
+        meta: "L1/L2 · ИБ-практика",
+        tasks: "Заявки по безопасности рабочих мест, СЗИ, резервное копирование, эскалация руководителю ИБ.",
+        hard: "Исполнение 152-ФЗ, СЗИ, бэкап, HelpDesk.",
+        soft: "Дисциплина доступа, аккуратность с ПДн.",
+        zone: "Операционная ИБ на L1/L2; после найма руководителя ИБ — исполнение политик."
+      },
+      seilbakh: {
+        name: "Сейльбах",
+        role: "Ведущий специалист по информационным технологиям",
+        meta: "L1/L2",
+        tasks: "Обслуживание серверов и рабочих мест, заявки, обучение коллег L1, документация.",
+        hard: "Windows/Linux, AD, ServiceDesk, базовые сети.",
+        soft: "Наставничество младших, приоритизация заявок.",
+        zone: "Усиленная L2-линия техподдержки, эскалация на Данилова и Роденко."
+      },
+      support_plus: {
+        name: "Специалист техподдержки — вакансия +1",
+        role: "Специалист технической поддержки",
+        meta: "L1/L2 · найм · география + УК МКД",
+        tasks: "Заявки удалённых площадок и УК, учётные записи пользователей УК, SLA на расширенном периметре.",
+        hard: "HelpDesk, AD-учётные записи, удалённая поддержка, Windows.",
+        soft: "Работа с распределёнными пользователями, спокойный сервис.",
+        zone: "Не снижать SLA при росте географии и подключении управляющих компаний."
       }
     };
 
@@ -2345,7 +2674,7 @@
     function activatePanel(id) {
       document.querySelectorAll(".panel").forEach(p => p.classList.toggle("active", p.id === "panel-" + id));
       document.querySelectorAll(".nav-btn").forEach(b => b.classList.toggle("active", b.dataset.panel === id));
-      const chipMap = { overview: "overview", org: "org", goals: "initiatives", initiatives: "initiatives", usc: "usc", invest: "invest", finance: "finance", vacancies: "vacancies", ecosystem: "ecosystem", raci: "raci" };
+      const chipMap = { overview: "overview", org: "org", infra: "org", goals: "initiatives", initiatives: "initiatives", usc: "usc", invest: "invest", finance: "finance", vacancies: "vacancies", ecosystem: "ecosystem", raci: "raci" };
       const chipId = chipMap[id] || null;
       document.querySelectorAll(".chip[data-jump]").forEach(c => c.classList.toggle("active", chipId !== null && c.dataset.jump === chipId));
       document.querySelector(".stage").scrollTop = 0;
