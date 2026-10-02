@@ -287,8 +287,9 @@
       padding: 1rem;
     }
     .org-canvas.canvas-sec {
-      min-width: 1180px;
+      min-width: 800px;
       min-height: 940px;
+      margin: 0 auto;
     }
     .org-node {
       position: absolute;
@@ -344,7 +345,7 @@
       background: linear-gradient(180deg, transparent, var(--line) 8%, var(--line) 92%, transparent);
       display: none;
     }
-    .org-canvas.canvas-sec .org-divider { display: block; }
+    .org-canvas.canvas-sec .org-divider { display: none; }
 
     .block-label {
       position: absolute;
@@ -644,7 +645,7 @@
         height: auto !important;
       }
       .org-canvas.canvas-sec {
-        min-width: 1180px !important;
+        min-width: 800px !important;
         min-height: 940px !important;
       }
       body.print-all .panel.print-fit-page .org-canvas {
@@ -1328,77 +1329,74 @@
 
           <div class="org-canvas-wrap">
             <div class="org-canvas canvas-sec" id="orgCanvasSec">
-              <svg class="org-svg" viewBox="0 0 1180 940" preserveAspectRatio="xMidYMin meet">
+              <svg class="org-svg" viewBox="0 0 800 940" preserveAspectRatio="xMidYMin meet">
                 <defs>
                   <marker id="arrowSec" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#A8B7C7"/>
                   </marker>
                 </defs>
-                <path d="M590 105 V170" stroke="#8B3A4A" stroke-width="2" fill="none"/>
-                <path d="M720 265 V610 H690" stroke="#8B3A4A" stroke-width="1.75" fill="none" stroke-dasharray="6 5"/>
-                <path d="M720 610 V725 H690" stroke="#8B3A4A" stroke-width="1.75" fill="none" stroke-dasharray="6 5"/>
-                <path d="M590 265 V400" stroke="#0E7C7B" stroke-width="2" fill="none"/>
-                <path d="M125 400 H590" stroke="#0E7C7B" stroke-width="2" fill="none"/>
-                <path d="M125 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
-                <path d="M355 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
-                <path d="M590 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M400 105 V170" stroke="#8B3A4A" stroke-width="2" fill="none"/>
+                <path d="M400 265 V400" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M170 400 H630" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M170 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M400 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
+                <path d="M630 400 V420" stroke="#0E7C7B" stroke-width="2" fill="none"/>
               </svg>
-              <div class="org-divider"></div>
 
-              <div class="org-node lead sec-lead active" data-person="marchenko" style="left:460px;top:10px;width:260px;animation-delay:.05s">
+              <div class="org-node lead sec-lead active" data-person="marchenko" style="left:270px;top:10px;width:260px;animation-delay:.05s">
                 <div class="role">Директор Департамента безопасности</div>
                 <div class="name">Марченко Алексей</div>
                 <div class="grade">ИТ и ИБ · вне ОБИТИ</div>
               </div>
 
-              <div class="org-node lead infra-lead" data-person="katanaev" style="left:460px;top:175px;width:260px;animation-delay:.1s">
+              <div class="org-node lead infra-lead" data-person="katanaev" style="left:270px;top:175px;width:260px;animation-delay:.1s">
                 <div class="role">Начальник отдела инфраструктуры и ИБ</div>
                 <div class="name">Катанаев Владимир</div>
                 <div class="grade">ИТ + ИБ · Инстеп + УК</div>
               </div>
 
-              <div class="block-label" style="left:20px;top:405px;color:var(--infra)">Развёртывание</div>
-              <div class="block-label" style="left:250px;top:405px;color:var(--infra)">Сисадмин + сети</div>
-              <div class="block-label" style="left:480px;top:405px;color:var(--infra)">Техподдержка L1/L2</div>
+              <div class="block-label" style="left:65px;top:405px;color:var(--infra)">Развёртывание</div>
+              <div class="block-label" style="left:295px;top:405px;color:var(--infra)">Сисадмин + сети</div>
+              <div class="block-label" style="left:525px;top:405px;color:var(--infra)">Техподдержка L1/L2</div>
 
-              <div class="org-node infra" data-person="rodenko" style="left:20px;top:440px;animation-delay:.18s">
+              <div class="org-node infra" data-person="rodenko" style="left:65px;top:440px;animation-delay:.18s">
                 <div class="role">DevOps / CI/CD</div>
                 <div class="name">Роденко Антон</div>
                 <div class="grade">Без расширения штата</div>
               </div>
 
-              <div class="org-node infra" data-person="danilov" style="left:250px;top:440px;animation-delay:.2s">
+              <div class="org-node infra" data-person="danilov" style="left:295px;top:440px;animation-delay:.2s">
                 <div class="role">Системный администратор</div>
                 <div class="name">Данилов Даниил</div>
                 <div class="grade">Серверы · AD · бэкап</div>
               </div>
-              <div class="org-node infra vacancy" data-person="sysadmin_vac" style="left:250px;top:555px;animation-delay:.21s">
+              <div class="org-node infra vacancy" data-person="sysadmin_vac" style="left:295px;top:555px;animation-delay:.21s">
                 <div class="role">Системный администратор</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Найм · серверы · рабочие места</div>
               </div>
-              <div class="org-node infra vacancy" data-person="neteng" style="left:250px;top:670px;animation-delay:.22s">
+              <div class="org-node infra vacancy" data-person="neteng" style="left:295px;top:670px;animation-delay:.22s">
                 <div class="role">Сетевой инженер</div>
                 <div class="name">Вакансия</div>
                 <div class="grade">Middle/Senior · найм</div>
               </div>
 
-              <div class="org-node infra" data-person="voronin" style="left:480px;top:440px;animation-delay:.24s">
+              <div class="org-node infra" data-person="voronin" style="left:525px;top:440px;animation-delay:.24s">
                 <div class="role">Специалист техподдержки</div>
                 <div class="name">Воронин Илья</div>
                 <div class="grade">L1/L2</div>
               </div>
-              <div class="org-node infra matrix-ib" data-person="kolpakov" style="left:480px;top:555px;animation-delay:.26s">
+              <div class="org-node infra matrix-ib" data-person="kolpakov" style="left:525px;top:555px;animation-delay:.26s">
                 <div class="role">Специалист техподдержки</div>
                 <div class="name">Колпаков Иван</div>
                 <div class="grade">L1/L2 · матрица ИБ</div>
               </div>
-              <div class="org-node infra matrix-ib" data-person="seilbakh" style="left:480px;top:670px;animation-delay:.28s">
+              <div class="org-node infra matrix-ib" data-person="seilbakh" style="left:525px;top:670px;animation-delay:.28s">
                 <div class="role">Ведущий специалист ИТ</div>
                 <div class="name">Сейльбах Сергей</div>
                 <div class="grade">L1/L2 · матрица ИБ</div>
               </div>
-              <div class="org-node infra vacancy" data-person="support_plus" style="left:480px;top:785px;animation-delay:.3s">
+              <div class="org-node infra vacancy" data-person="support_plus" style="left:525px;top:785px;animation-delay:.3s">
                 <div class="role">Специалист техподдержки</div>
                 <div class="name">Вакансия +1</div>
                 <div class="grade">География + пользователи УК</div>
